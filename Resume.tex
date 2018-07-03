@@ -1,0 +1,219 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+
+%\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{1pt}}
+
+\newlength{\spacebox}
+\settowidth{\spacebox}{88888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+%\newcommand{\MyName}[1]{ % Name
+%		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+%		\par \normalsize \normalfont}
+
+%\newcommand{\MySlogan}[1]{ % Slogan (optional)
+%		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+%		\par \normalsize \normalfont}
+
+\newcommand{\MyName}[1]{ % Name
+        \noindent
+		\Huge \usefont{OT1}{phv}{b}{n} #1
+		\par \normalsize \normalfont}
+
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\noindent
+		\large \usefont{OT1}{phv}{m}{n}\textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+%\newcommand{\PersonalEntry}[2]{
+%		\noindent\hangindent=2em\hangafter=0 % Indentation
+%		\parbox{\spacebox}{        % Box to align text
+%		\textit{#1}}		       % Entry name (birth, address, etc.)
+%		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\hfill\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hfill\hspace{1.5em} #2 \par}    % Entry value
+
+
+\newcommand{\SummaryEntry}[1]{
+		\noindent\hangindent=2em\hangafter=0
+		\noindent #1
+		\normalsize \par}
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{White}{%
+			\parbox{5cm}{%
+			\hfill\color{Black}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\noindent\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\parbox{0.35\textwidth}{
+	\MyName{Ben Liu}
+	\MySlogan{Full-Stack Developer}
+}
+\parbox{0.6\textwidth}{
+%%% Personal details
+%%% ------------------------------------------------------------
+%\NewPart{Personal information}{}
+
+%\PersonalEntry{Nacimiento}{11 de diciembre, 1997}
+%\PersonalEntry{Address}{111 First St, New York}
+%\PersonalEntry{Website}{\url{http://benliu.me}}
+%\PersonalEntry{LinkedIn}{\url{www.linkedin.com/in/ben-liu}}
+%\PersonalEntry{GitHub}{\url{github.com/ben196888}}
+%\PersonalEntry{Telephone}{(+886) 0921-960-027}
+%\PersonalEntry{E--mail}{\url{ben196888@gmail.com}}
+\PersonalEntry{}{\url{www.linkedin.com/in/ben-liu}}
+\PersonalEntry{}{\url{github.com/ben196888}}
+%\PersonalEntry{}{(+886) 0921-960-027}
+\PersonalEntry{}{(+61) 0413-188-912}
+\PersonalEntry{}{\url{ben196888@gmail.com}}
+}
+\sepspace
+
+%%% Summary
+%%% ------------------------------------------------------------
+\NewPart{Summary}{}
+
+\SummaryEntry{Full-Stack Developer at Tabcorp. Focusing on ReactJS, NodeJS, Golang, and cloud platforms.
+	Familiar with Docker container based development and delivery. Agile software development experienced.}
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Personal Skills}{}
+
+\SkillsEntry{Language}{Mandarin (Native)}
+\SkillsEntry{        }{English (Medium)}
+
+\SkillsEntry{Skills}{ReactJS, NodeJS, Golang, Docker container, Redis, and Firebase.}
+\SkillsEntry{      }{Git, UNIX/Linux CLI, basic shell script.}
+\SkillsEntry{      }{Experience about deploying on AWS ECS with Cloudformation}
+\SkillsEntry{      }{Experience about agile, CI/CD, gitflow, data visualization.}
+
+%%% Personality
+%%% ------------------------------------------------------------
+\NewPart{Personality}{}
+
+\SummaryEntry{I am an avid developer, passionate about programming, data, and technology.
+	I am also a good autodidact, curious about open data, open government, new techniques and software development.}
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
+
+\EducationEntry{Bachelor's degree, Mathematics}{2009-2014}
+{National Taiwan University, Taipei, Taiwan}{}
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Work Experience}{}
+
+\WorkEntry{Tabcorp, Melbourne, Australia}{Jan. 2017-}{Developer}{
+\begin{itemize}
+	\item {Full-stack web development in AngularJS-RxJS-NodeJS-RDS stack.}
+	\item {Front-end web development in ReactJS, AngularJS, and EmberJS.}
+	\item {Continuously delivered web applications to internal and external users.}
+	\item {Guided developers in different teams to solve production issues.}
+	\item {Dockerized infrastructures and wrote deploying script on AWS Cloudformation.}
+	\item []{
+		\textbf{Project: Green-Moon}
+		\begin{itemize}
+			\item {One of the main developers for the on-course/call-centre operator terminal website.}
+			\item {Developed betting terminal website in ReactJS, AngularJS, and NodeJS.}
+			\item {Integrated and maintained large scale web applications.}
+			\item {Developed multiple consolidated libraries of web components, services, and utilities used across terminal applications.}
+			\item {Improved DOM rendering unit tests performance. It reduced 3500\% executing time.}
+		\end{itemize}
+	}
+	\item []{
+		\textbf{Project: Rubix}
+		\begin{itemize}
+			\item {One of two main front-end developers in the real-time transactions dashboard project.}
+			\item {Developed high performed real-time transactions web app in ReactJS and EmberJS, and migrated internal CRM and Salesforce CRM API.}
+			\item {Improved website performance by 500\% in rendering real-time transactions.}
+			\item {Upgraded the app to be eligible for more than 10 million transactions on Melbourne Cup Day tomorrow and over 5 million on the Cup itself.}
+			\item {At peak periods this will see us processing up to 3,000 bets per second.}
+			\item {Improved code quality from 75\% test coverage rate to higher than 95\%.}
+		\end{itemize}
+	}
+\end{itemize}
+}
+
+\sepspace
+
+\WorkEntry{HopebayTech, Taipei, Taiwan}{Feb. 2014-Oct. 2016}{Software Engineer}{
+\begin{itemize}
+	\item {Full-stack web development in ReactJS-ExpressJS-NodeJS-Redis stack.}
+	\item {Developed 100+ users internal web services, migrated Google Apps API and Slack API.}
+	\item {Centralized system monitoring platform, migrated internal API and ELK.}
+	\item {Dockerized web app infrastructures; e.g., web services, database, and build environment.}
+	\item {Built CI/CD workflows and environments. Migrated Docker, Jenkins, and Gitlab services.}
+	\item {Promote CI/CD, gitflow, and dockerization. Reduced 80\% iteration time in other 5 projects.}
+	\item []{
+		\textbf{Project: Internal Web Apps}
+		\begin{itemize}
+			\item {The main developer of internal EPM system and the meeting room booking system.}
+			\item {The main developer of the flea-market provided the marketplace bidding system.}
+			\item {The main developer of the systems health dashboard to monitor total 200+U machines.}
+		\end{itemize}
+	}
+\end{itemize}
+}
+
+%%% Projects
+%%% ------------------------------------------------------------
+%\NewPart{Project}{}
+%\EducationEntry{Leave/overtime system}{}{}{}
+%\EducationEntry{Activity booking system}{}{}{}
+%\EducationEntry{}{}{}{}
+
+%%% References
+%%% ------------------------------------------------------------
+%\NewPart{References}{}
+%Available upon request
+\end{document}
