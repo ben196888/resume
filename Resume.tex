@@ -83,6 +83,13 @@
 		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
 		\normalsize \par}
 
+\newcommand{\PrjEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\noindent\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
 %%% Begin Document
 %%% ------------------------------------------------------------
 \begin{document}
@@ -163,10 +170,10 @@ He is not only an avid problem solver but also a good autodidact who is craving 
 
 %%% Projects
 %%% ------------------------------------------------------------
-%\NewPart{Project}{}
-%\EducationEntry{Leave/overtime system}{}{}{}
-%\EducationEntry{Activity booking system}{}{}{}
-%\EducationEntry{}{}{}{}
+% \NewPart{Project}{}
+% \PrjEntry{}{}{}{}
+%\PrjEntry{}{}{}{}
+%\PrjEntry{}{}{}{}
 
 %%% References
 %%% ------------------------------------------------------------
