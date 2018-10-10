@@ -50,7 +50,7 @@
 %		\hspace{1.5em} #2 \par}    % Entry value
 
 \newcommand{\PersonalEntry}[2]{
-		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\noindent\hangindent=em\hangafter=0 % Indentation
 		\parbox{\spacebox}{        % Box to align text
 		\hfill\textit{#1}}		       % Entry name (birth, address, etc.)
 		\hfill\hspace{1.5em} #2 \par}    % Entry value
@@ -130,8 +130,8 @@ He is not only an avid problem solver but also a good autodidact who is craving 
 %%% ------------------------------------------------------------
 \NewPart{Skills}{}
 
-\SkillsEntry{Skills}    {JavaScript, Docker, Golang, Google Apps Script}
-\SkillsEntry{Libraries} {ReactJS, Redux, RxJS, NodeJS, Angular, Restify}
+\SkillsEntry{Skills}    {JavaScript, Docker, Golang, TypeScript, Python}
+\SkillsEntry{Libraries} {ReactJS, Redux, RxJS, NodeJS, Angular, EmberJS, Restify}
 \SkillsEntry{Databases} {Redis, Firebase, PostgreSQL}
 \SkillsEntry{Tools}     {Jenkins, Buildkite}
 
@@ -139,9 +139,9 @@ He is not only an avid problem solver but also a good autodidact who is craving 
 %%% ------------------------------------------------------------
 \NewPart{Work Experience}{}
 
-\WorkEntry{Tabcorp, Melbourne, Australia}{Jan. 2017-}{Developer}{
+\WorkEntry{Tabcorp, Melbourne, Australia}{Jan. 2017-Sep. 2018}{Developer}{
 \begin{itemize}
-	\item {Led 3 Devs and 1 DevOps to build an API service for 1000+ online mobile users in 4 weeks.}
+	\item {Led 3 Devs and 1 DevOps to build an API service for 5000 transactions per min in 4 weeks.}
 	\item {Solved 3rd party API issues across the Ops team and Devs team on production in one day.}
 	\item {Reduced DOM unit tests 3500\% execution time by replacing headless chrome with JSDOM.}
 	\item {Increased unit tests coverage rate from 75\% to higher than 95\% by adding 100+ test cases.}
