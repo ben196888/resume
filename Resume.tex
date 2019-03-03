@@ -17,11 +17,11 @@
 
 \sectionfont{%                      % Change font of \section command
 	\usefont{OT1}{phv}{b}{n}%       % bch-b-n: CharterBT-Bold font
-	\sectionrule{0pt}{0pt}{-5pt}{1pt}}
+	\sectionrule{0pt}{0pt}{-3pt}{1pt}}
 
 \newlength{\spacebox}
 \settowidth{\spacebox}{88888888}            % Box to align text
-\newcommand{\sepspace}{\vspace*{1em}}       % Vertical space macro
+\newcommand{\sepspace}{\vspace*{0.3em}}       % Vertical space macro
 
 %\newcommand{\MyName}[1]{ % Name
 %		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
@@ -53,7 +53,7 @@
 		\noindent\hangindent=em\hangafter=0 % Indentation
 		\parbox{\spacebox}{        % Box to align text
 		\hfill\textit{#1}}		       % Entry name (birth, address, etc.)
-		\hfill\hspace{1.5em} #2 \par}    % Entry value
+		\hfill\hspace{1.2em} #2 \par}    % Entry value
 
 
 \newcommand{\SummaryEntry}[1]{
@@ -65,7 +65,7 @@
 		\noindent\hangindent=2em\hangafter=0 % Indentation
 		\parbox{\spacebox}{        % Box to align text
 		\textit{#1}}			   % Entry name (birth, address, etc.)
-		\hspace{1.5em} #2 \par}    % Entry value
+		\hspace{1.2em} #2 \par}    % Entry value
 
 \newcommand{\EducationEntry}[4]{
 		\noindent \textbf{#1} \hfill      % Study
@@ -110,7 +110,7 @@
 
 \PersonalEntry{}{\href{https://www.linkedin.com/in/ben-liu}{\texttt{linkedin.com/in/ben-liu}}}
 \PersonalEntry{}{\href{https://github.com/ben196888}{\texttt{github.com/ben196888}}}
-\PersonalEntry{}{\href{tel:+61-413-188-912}{\texttt{+61 (0)413 188 912}}}
+\PersonalEntry{}{\href{tel:+61-413-188-912}{\texttt{(+61) 413 188 912}}}
 \PersonalEntry{}{\href{mailto:ben196888@gmail.com}{\texttt{ben196888@gmail.com}}}
 }
 \sepspace
@@ -121,7 +121,7 @@
 
 \SummaryEntry{%
 Ben Liu is focusing on web apps developing these 5 years.
-He worked in JavaScript / ReactJS and NodeJS for 3 and 1.5 years respectively.
+He worked in JavaScript / ReactJS and NodeJS for 3.5 and 2 years respectively.
 He is always passionate about new technology and likes to learn new ideas from developer events and open source projects.
 He is not only an avid problem solver but also a good autodidact who is craving for any different solution.
 }
@@ -130,14 +130,24 @@ He is not only an avid problem solver but also a good autodidact who is craving 
 %%% ------------------------------------------------------------
 \NewPart{Skills}{}
 
-\SkillsEntry{Skills}    {JavaScript, Docker, Golang, TypeScript, Python}
+\SkillsEntry{Skills}    {JavaScript, TypeScript, Docker, Golang, Python}
 \SkillsEntry{Libraries} {ReactJS, Redux, RxJS, NodeJS, Angular, EmberJS, Restify}
-\SkillsEntry{Databases} {Redis, Firebase, PostgreSQL}
-\SkillsEntry{Tools}     {Jenkins, Buildkite}
+\SkillsEntry{Databases} {Redis, Mongo, Firebase, PostgreSQL}
+\SkillsEntry{Tools}     {Jenkins, Buildkite, Kafka, RabbitMQ, Elasticsearch}
 
 %%% Work experience
 %%% ------------------------------------------------------------
 \NewPart{Work Experience}{}
+
+\WorkEntry{Predictive Hire, Melbourne, Australia}{Oct. 2018-}{Software Engineer}{
+\begin{itemize}
+	\item {Designed and built a chat bot web application for 1000+ end users in 3 weeks.}
+	\item {Led 2 Devs to build a serverless API to integrate applicant tracking system in 2 weeks.}
+	\item {Reduced 600\% CI/CD run time by decoupling micro-services in same integration test rate.}
+\end{itemize}
+}
+
+\sepspace
 
 \WorkEntry{Tabcorp, Melbourne, Australia}{Jan. 2017-Sep. 2018}{Developer}{
 \begin{itemize}
