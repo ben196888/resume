@@ -28,14 +28,6 @@
 \settowidth{\spacebox}{88888888}            % Box to align text
 \newcommand{\sepspace}{\vspace*{0.3em}}       % Vertical space macro
 
-%\newcommand{\MyName}[1]{ % Name
-%		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
-%		\par \normalsize \normalfont}
-
-%\newcommand{\MySlogan}[1]{ % Slogan (optional)
-%		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
-%		\par \normalsize \normalfont}
-
 \newcommand{\MyName}[1]{ % Name
         \noindent
 		\Huge \usefont{OT1}{phv}{b}{n} #1
@@ -47,12 +39,6 @@
 		\par \normalsize \normalfont}
 
 \newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
-
-%\newcommand{\PersonalEntry}[2]{
-%		\noindent\hangindent=2em\hangafter=0 % Indentation
-%		\parbox{\spacebox}{        % Box to align text
-%		\textit{#1}}		       % Entry name (birth, address, etc.)
-%		\hspace{1.5em} #2 \par}    % Entry value
 
 \newcommand{\PersonalEntry}[2]{
 		\noindent\hangindent=2em\hangafter=0 % Indentation
@@ -98,11 +84,6 @@
 %%% Begin Document
 %%% ------------------------------------------------------------
 \begin{document}
-% you can upload a photo and include it here...
-%\begin{wrapfigure}{l}{0.5\textwidth}
-%	\vspace*{-2em}
-%		\includegraphics[width=0.15\textwidth]{photo}
-%\end{wrapfigure}
 
 \parbox{0.35\textwidth}{
 	\MyName{Ben Liu}
@@ -111,7 +92,6 @@
 \parbox{0.6\textwidth}{
 %%% Personal details
 %%% ------------------------------------------------------------
-%\NewPart{Personal information}{}
 
 \PersonalEntry{}{\href{https://www.linkedin.com/in/ben-liu}{\texttt{linkedin.com/in/ben-liu}}}
 \PersonalEntry{}{\href{https://github.com/ben196888}{\texttt{github.com/ben196888}}}
