@@ -7,7 +7,12 @@
 \usepackage{graphicx}                    % Enable pdflatex
 \usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
 \usepackage{geometry}
-	\textheight=700px                    % Saving trees ;-)
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm,
+	}
 \usepackage{hyperref}
 
 %\frenchspacing              % Better looking spacings after periods
@@ -50,7 +55,7 @@
 %		\hspace{1.5em} #2 \par}    % Entry value
 
 \newcommand{\PersonalEntry}[2]{
-		\noindent\hangindent=em\hangafter=0 % Indentation
+		\noindent\hangindent=2em\hangafter=0 % Indentation
 		\parbox{\spacebox}{        % Box to align text
 		\hfill\textit{#1}}		       % Entry name (birth, address, etc.)
 		\hfill\hspace{1.2em} #2 \par}    % Entry value
