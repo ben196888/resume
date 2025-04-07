@@ -8,13 +8,15 @@
     "preview": "astro preview",
     "astro": "astro",
     "setup-pdf": "playwright install chromium",
-    "generate-pdf": "npm run setup-pdf && tsx generate-pdf.ts"
+    "generate-pdf": "npm run setup-pdf && tsx generate-pdf.ts",
+    "test:screenshot": "NODE_ENV=test playwright test tests/screenshot.test.ts"
   },
   "dependencies": {
     "astro": "^5.6.1",
     "playwright": "^1.51.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.51.1",
     "@types/node": "^20.11.30",
     "tsx": "^4.7.1",
     "typescript": "^5.4.2"
