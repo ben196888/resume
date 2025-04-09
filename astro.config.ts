@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
+  site: 'https://benliu.dev',
+  base: '/',
   devToolbar: {
     enabled: process.env.NODE_ENV !== 'test'
   },
