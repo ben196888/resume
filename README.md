@@ -1,115 +1,45 @@
-# Resume
+# Resume redirects
 
-A modern resume built with Astro, featuring both web and PDF outputs. This project provides a clean, maintainable way to manage your resume with a single source of truth.
+This repository redirects the old GitHub Pages site at
+<https://ben196888.github.io/resume/> to benliu.dev. Keep Pages enabled.
+The Astro résumé remains available in Git history, and `resume-latex/` retains
+the historical LaTeX sources.
 
-## Features
+**Do not merge or deploy until benliu.dev production is verified on the new
+host, and the Pages custom domain `benliu.dev` has been removed from this
+repo.** Merging while this repo still owns that custom domain would publish
+these redirects at the apex.
 
-- 🚀 **Modern Web Version**
-  - Built with Astro for fast performance
-  - Responsive design that works on all devices
-  - Clean, professional styling
-  - Interactive links and modern layout
+| Old URL | Destination or behavior |
+| --- | --- |
+| `https://ben196888.github.io/resume/` | Redirect to `https://benliu.dev/about/` |
+| `https://ben196888.github.io/resume/index.html` | Redirect to `https://benliu.dev/about/` |
+| Unmatched paths, including old assets such as `/favicon.svg` and `/_astro/*` (`404.html`) | Redirect to `https://benliu.dev/` |
+| `https://ben196888.github.io/resume/resume.pdf` | Serve the existing PDF in place; canonical new URL: `https://benliu.dev/resume.pdf` |
 
-- 📄 **PDF Generation**
-  - Automated PDF generation using Playwright
-  - Matches traditional resume layout
-  - Print-optimized styling
-  - Single command to generate PDF
+The HTML pages provide an immediate meta refresh, a JavaScript redirect that
+preserves the URL hash, a canonical URL, and a visible fallback link.
+They use `noindex` to keep the redirect pages out of search results.
 
-- 🛠 **Developer Experience**
-  - TypeScript support
-  - Hot module reloading in development
-  - Easy to maintain and update
-  - Clean project structure
+GitHub Pages cannot issue a 301 redirect for a PDF, so the root `resume.pdf`
+stays byte-for-byte unchanged (SHA-256
+`edce0b43d4b8e16e9dae9850d9564feb788d6732df2987c34a631225e63010c4`) and is
+copied into the Pages artifact during the build. This keeps a single source
+file and makes the old PDF URL available after cutover (it currently 404s
+because the file was never in the Astro `public/` folder). That historical
+PDF is not the same file as the new site's
+`https://benliu.dev/resume.pdf` (SHA-256
+`434421857b5f2f986b47696d93655a544803dda1edee162fd86c0578f1209d81` on the
+`feat/pixel-personal-site` preview).
 
-## Getting Started
+`.github/workflows/deploy.yml` publishes `site/` plus the root PDF through the
+Pages artifact and deployment actions. It runs on pushes to `master` or manual
+dispatch, with no Node.js or Astro build, and does not deploy from pull
+requests.
 
-### Prerequisites
-
-- Node.js (v18 or later recommended)
-- npm (comes with Node.js)
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/resume.git
-   cd resume
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-### Development
-
-Start the development server:
-```bash
-npm run dev
-```
-Visit `http://localhost:4321` to see your resume.
-
-### Generating PDF
-
-Generate a PDF version of your resume:
-```bash
-npm run generate-pdf
-```
-The PDF will be saved as `resume.pdf` in the project root.
-
-## Project Structure
-
-```
-resume/
-├── src/
-│   └── pages/
-│       └── index.astro  # Main resume content and styling
-├── generate-pdf.ts      # PDF generation script
-├── package.json
-└── tsconfig.json
-```
-
-## Customization
-
-### Content
-Edit `src/pages/index.astro` to update your resume content. The file includes:
-- Personal information
-- Summary
-- Work experience
-- Projects
-- Skills
-- Education
-
-### Styling
-The CSS is included in the `index.astro` file and features:
-- Responsive design
-- Print-specific styles
-- Easy to customize variables
-
-### PDF Generation
-Adjust PDF settings in `generate-pdf.ts`:
-- Page format
-- Margins
-- Scaling
-- Other Playwright PDF options
-
-## Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run generate-pdf` - Generate PDF version
-- `npm run setup-pdf` - Install Playwright browser (run automatically when needed)
-
-## Original Source
-
-This project was migrated from a LaTeX-based resume to provide:
-- Easier maintenance
-- Web presence
-- Automated PDF generation
-- Modern development experience
-
-## License
-
-MIT License - feel free to use this for your own resume!
+After DNS for `benliu.dev` points at the new site, remove the Pages custom
+domain `benliu.dev` in this repository's settings so
+`https://ben196888.github.io/resume/` serves these files instead of 301ing to
+the apex. Do not add a `CNAME` file: the custom domain is managed in
+repository settings. Pages stays enabled; the repo may be archived later
+(archived repos keep serving Pages).
