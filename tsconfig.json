@@ -1,5 +1,0 @@
-{
-  "extends": "astro/tsconfigs/base",
-  "include": [".astro/types.d.ts", "**/*.ts"],
-  "exclude": ["dist", "**/*.test.ts", "**/*.spec.ts", "**/__tests__/**", "resume-latex/**"]
-}
